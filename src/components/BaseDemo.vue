@@ -9,6 +9,7 @@ export default {
   name: "BaseDemo",
   mounted() {
     document.body.appendChild(renderer.domElement);
+
   },
 };
 </script>
