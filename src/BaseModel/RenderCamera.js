@@ -10,8 +10,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   2000
 );
-camera.position.set(300, 300, 300);
-camera.lookAt(0, 0, 0);
+camera.position.set(0, 50, 100);
 
 //2.渲染器
 
@@ -20,10 +19,12 @@ const renderer = new THREE.WebGLRenderer({
   antialias: true,
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 1); //背景颜色
 //引入边缘高光函数
 let composer = selectEmissive(renderer, mesh);
 //3 .轨道控制器
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 50, 0);
 controls.enableDamping = true;
 // 浏览器窗口改变事件
 window.addEventListener("resize", () => {
